@@ -1,0 +1,19 @@
+{
+  "name": "hello-world-web",
+  "version": "1.0.0",
+  "description": "Hello world web application",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest",
+    "test-ci": "jest --ci --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}
