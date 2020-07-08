@@ -4,7 +4,8 @@ const { getHelloWorld } = require('./StringProvider');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  const message = getHelloWorld();
+  res.send(message);
 });
 
 const port = 3000;
