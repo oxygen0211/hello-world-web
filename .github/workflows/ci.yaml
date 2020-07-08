@@ -34,3 +34,18 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/hello-world-web:$IMAGE_TAG .
         docker push $ECR_REGISTRY/hello-world-web:$IMAGE_TAG
+        echo "::set-output name=image::$ECR_REGISTRY/hello-world-web:$IMAGE_TAG"
+    - name: Update ECS task definition
+      id: update-task-def
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: staging-ecs-task.json
+        container-name: hello-world-staging
+        image: ${{ steps.build-image.outputs.image }}
+    - name: Deploy Amazon ECS task
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: ${{ steps.update-task-def.outputs.task-definition }}
+        service: hello-world-staging
+        cluster: default
+        wait-for-service-stability: true
