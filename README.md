@@ -34,4 +34,5 @@
 * Load Balancing
 * Domain bindings
 * Port port mappings
-+ API gateway
+* API gateway
+* Test-deployments für Pull Requests
