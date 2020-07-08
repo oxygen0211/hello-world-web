@@ -51,7 +51,7 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: prod-ecs-task.json
-        container-name: hello-world-staging
+        container-name: hello-world-prod
         image: ${{ steps.docker-build.outputs.image }}
 
     - name: Deploy Amazon ECS task
