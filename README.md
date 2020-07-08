@@ -15,6 +15,10 @@
 ## Alternativen, mögliche Erweiterungen
 * On-Premise VCS (GitLab, GitHub Enterprise, Gitblit,...)
 * GitLab, AWS Code commit
+* Verbessertes Projekt-setup
+  * Babel
+  * Intenes build system
+  * verbessertes production-layout
 * On-Premise oder alternative cloud CI
   * Jenkins
   * Circle CI
