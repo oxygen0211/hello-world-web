@@ -1,4 +1,4 @@
-name: Create and deplyo a release
+name: Create and deploy a release
 on:
   push:
     # Sequence of patterns matched against refs/tags
@@ -34,13 +34,13 @@ jobs:
 
     - name: extract tag name
       id: tag
-      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+      run: echo ::set-output name=tag::${GITHUB_REF#refs/tags/}
 
     - name: docker build and push to ECR
       id: docker-build
       env:
         ECR_REGISTRY: ${{ steps.ecr-login.outputs.registry }}
-        IMAGE_TAG: ${{ steps.tag.outputs.result }}
+        IMAGE_TAG: ${{ steps.tag.outputs.tag }}
       run: |
         docker build -t $ECR_REGISTRY/hello-world-web:$IMAGE_TAG .
         docker push $ECR_REGISTRY/hello-world-web:$IMAGE_TAG
