@@ -1,7 +1,7 @@
-const helloWorld = 'Good bye, world';
+const helloWorld = 'Hello, World';
 
 const getHelloWorld = () => helloWorld;
 
-module.exports = {
+module.exports = { 
   getHelloWorld,
 };
