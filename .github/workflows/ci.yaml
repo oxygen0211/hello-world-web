@@ -1,0 +1,15 @@
+name: Continuous integration pipeline
+
+on: [push]
+
+jobs:
+  build-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: prepare
+        run: npm ci
+
+      - name: test
+        run: npm run test-ci
