@@ -14,6 +14,8 @@
 
 ## Alternativen, mögliche Erweiterungen
 * On-Premise VCS (GitLab, GitHub Enterprise, Gitblit,...)
+* Reporting, z.B. testergebnisse, covreage
+* Statische code analyse (Sonar, Code climate,...)
 * GitLab, AWS Code commit
 * Verbessertes Projekt-setup
   * Babel
