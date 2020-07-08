@@ -33,4 +33,4 @@ jobs:
         IMAGE_TAG: ${{ github.sha }}
       run: |
         docker build -t $ECR_REGISTRY/hello-world-web:$IMAGE_TAG .
-        docker push -t $ECR_REGISTRY/hello-world-web:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/hello-world-web:$IMAGE_TAG .
