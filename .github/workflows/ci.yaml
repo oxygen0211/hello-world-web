@@ -53,5 +53,5 @@ jobs:
       with:
         task-definition: ${{ steps.update-task-def.outputs.task-definition }}
         service: hello-world-staging
-        cluster: default
+        cluster: hello-world
         wait-for-service-stability: true
