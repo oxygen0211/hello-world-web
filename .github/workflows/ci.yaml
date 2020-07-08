@@ -1,6 +1,6 @@
 name: Continuous integration pipeline
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build-ci:
