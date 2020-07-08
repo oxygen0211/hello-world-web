@@ -18,7 +18,6 @@ jobs:
   deploy-prod:
     runs-on: ubuntu-latest
     needs: build-ci
-    if: github.ref == 'refs/heads/master'
     steps:
     - uses: actions/checkout@v2
 
