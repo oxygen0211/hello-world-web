@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "hello-world-helm"
+spec:
+  ports:
+  - name: web
+    port: 3000
+    targetPort: 3000
+  selector:
+    name: "hello-world-helm"

@@ -1,0 +1,27 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: 'hello-world-helm-build'
+spec:
+  source:
+    type: Git
+    git:
+      uri: "{{ .Values.build.repo.url }}"
+    contextDir: /
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'hello-world-helm:latest'
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+  triggers:
+  - type: ImageChange
+  - type: ConfigChange
+  - type: GitHub
+    github:
+      secret: "cS3AFvpd1DLz7C0VW5OVmJhTnXM0qwuOy4JFtulV"
+  - type: Generic
+    generic:
+      secret: "gUE5VbKpAmDhz0dYMx5VkZUGK31jQxgE2uOfazNv"
